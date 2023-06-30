@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Navigatation Component</title>
+    <style>
+        body {
+            display: flex;
+        }
+        #left-panel {
+            width: 200px;
+            background: #f0f0f0;
+            padding: 20px;
+        }
+        #content {
+            flex-grow: 1;
+            padding: 20px;
+        }
+        #content p {
+            font-size: 18px;
+            line-height: 1.5;
+        }
+    </style>
+    <script>
+        function showContent(contentId) {
+            var content = document.getElementById(contentId);
+            var contentDivs = document.getElementsByClassName('content');
+            for (var i = 0; i < contentDivs.length; i++) {
+                contentDivs[i].style.display = 'none';
+            }
+            content.style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+    <div id="left-panel">
+        <ul>
+            <li><a href="#" onclick="showContent('home-content')">Home</a></li>
+            <li><a href="#" onclick="showContent('contact-content')">Contact</a></li>
+            <li><a href="#" onclick="showContent('info-content')">Information</a></li>
+            <li><a href="#" onclick="showContent('guide-content')">Guide</a></li>
+        </ul>
+    </div>
+    <div id="content">
+        <div id="home-content" class="content">
+            <h2>Welcome to the Home Page!</h2>
+            <p>This is the home page content.</p>
+        </div>
+        <div id="contact-content" class="content" style="display: none;">
+            <h2>Contact Information</h2>
+            <p>This is the contact page content.</p>
+        </div>
+        <div id="info-content" class="content" style="display: none;">
+            <h2>Information Page</h2>
+            <p>This is the information page content.</p>
+        </div>
+        <div id="guide-content" class="content" style="display: none;">
+            <h2>Guide</h2>
+            <p>This is the guide page content.</p>
+        </div>
+    </div>
+</body>
+</html>
